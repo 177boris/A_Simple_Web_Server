@@ -21,7 +21,7 @@ class RequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     
     # Handle HTTP requests by returning a fixed 'page '
 
-        # Page to send back.
+    # Page to send back.
     Page = '''\
 <html>
 <body>
@@ -46,7 +46,7 @@ class RequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
 
     def create_page(self):
-
+        # implement this 
         values = {
             'date_time'   : self.date_time_string(),
             'client_host' : self.client_address[0],
@@ -65,7 +65,7 @@ class RequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
     def send_page(self, page):
         self.send_response(200)
         self.send_header("Content-Type", "text/html")
-        self.send_header("Content-Length", str(len(self.Page)))
+        self.send_header("Content-Length", str(len(self.Page))) 
         self.end_headers()
         self.wfile.write(self.Page) 
 
