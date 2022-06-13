@@ -41,8 +41,8 @@ class case_cgi_file(object):
     '''Something runnable.'''
 
     def test(self, handler):
-        return os.path.isfile(handler.full_path) and \
-               handler.full_path.endswith('.py')
+        return os.path.isfile(handler.full_path) and \ 
+                handler.full_path.endswith('.py')
 
     def act(self, handler):
         handler.run_cgi(handler.full_path)
